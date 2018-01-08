@@ -15,7 +15,7 @@ Feature: generate schema for test with murker capture block
             martian = Martian.create! name: 'spajic', age: 30
 
             Murker.capture do
-              get '/v1/martians.json'
+              get '/v1/martians'
             end
 
             expect(response).to be_success
@@ -51,14 +51,14 @@ Feature: generate schema for test with murker capture block
                   items:
                     type: object
                     required:
+                    - id
                     - name
                     - age
-                    - ololo
                     properties:
+                      id:
+                        type: integer
                       name:
                         type: string
                       age:
                         type: integer
-                      ololo:
-                        type: string
   """

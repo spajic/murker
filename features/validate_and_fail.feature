@@ -12,10 +12,10 @@ Feature: validate interaction and fails given schema already exists and does not
 
         describe "GET #index and martian" do
           it "returns a success response", :murker do
-            martian = Martian.create! name: 'spajic', age: 30, id: 1
+            martian = Martian.create! name: 'spajic', age: 30
 
-            get '/v1/martians.json'
-            get '/v1/martians/1.json'
+            get '/v1/martians'
+            get "/v1/martians/#{martian.id}"
 
             expect(response).to be_success
           end
@@ -44,17 +44,17 @@ Feature: validate interaction and fails given schema already exists and does not
                       items:
                         type: object
                         required:
+                        - id
                         - name
                         - age
-                        - ololo
                         - thisIsGonnaFail
                         properties:
+                          id:
+                            type: integer
                           name:
                             type: string
                           age:
                             type: integer
-                          ololo:
-                            type: string
       """
 
     Given a file named "spec/murker/v1/martians/__id/GET.yml" with:
@@ -83,17 +83,17 @@ Feature: validate interaction and fails given schema already exists and does not
                     schema:
                       type: object
                       required:
+                      - id
                       - name
                       - age
-                      - ololo
                       - thisIsGonnaFailToo
                       properties:
+                        id:
+                          type: integer
                         name:
                           type: string
                         age:
                           type: integer
-                        ololo:
-                          type: string
       """
 
   When I run `bin/rspec spec/requests/martians_spec.rb`

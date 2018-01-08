@@ -12,10 +12,10 @@ Feature: generate two schemas from one test with two interactions
 
         describe "GET #index and martian" do
           it "returns a success response", :murker do
-            martian = Martian.create! name: 'spajic', age: 30, id: 1
+            martian = Martian.create! name: 'spajic', age: 30
 
-            get '/v1/martians.json'
-            get '/v1/martians/1.json'
+            get '/v1/martians'
+            get "/v1/martians/#{martian.id}"
 
             expect(response).to be_success
           end
@@ -50,16 +50,16 @@ Feature: generate two schemas from one test with two interactions
                   items:
                     type: object
                     required:
+                    - id
                     - name
                     - age
-                    - ololo
                     properties:
+                      id:
+                        type: integer
                       name:
                         type: string
                       age:
                         type: integer
-                      ololo:
-                        type: string
   """
 
   Then a file named "spec/murker/v1/martians/__id/GET.yml" should exist
@@ -90,15 +90,14 @@ Feature: generate two schemas from one test with two interactions
                 schema:
                   type: object
                   required:
+                  - id
                   - name
                   - age
-                  - ololo
                   properties:
+                    id:
+                      type: integer
                     name:
                       type: string
                     age:
                       type: integer
-                    ololo:
-                      type: string
-
   """
