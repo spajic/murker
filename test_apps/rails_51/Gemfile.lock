@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/spajic/murker.git
-  revision: 505e74787fce6f6d73492bdabd78f4b5724c72bb
+  revision: 0b254100e2fd94974c8b22c243c681302b0fce26
   branch: master
   specs:
     murker (0.1.0)
@@ -74,7 +74,7 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.1)
-    multi_json (1.12.2)
+    multi_json (1.13.0)
     nio4r (2.2.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
