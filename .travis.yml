@@ -4,9 +4,8 @@ rvm:
   - 2.3.2
 before_install:
   - gem install bundler -v 1.16.1
-  - gem install rubocop
 script:
-  - rubocop
+  - bundle exec rubocop
   - RAILS_ENV=test bundle exec rake spec
   - bundle exec appraisal install && RAILS_ENV=test bundle exec appraisal rails-5 cucumber
 cache: bundler
