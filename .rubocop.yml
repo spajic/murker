@@ -7,8 +7,9 @@ AllCops:
     - 'config/**/*'
     - 'db/**/*'
     - 'Gemfile'
-    - 'test_apps/**/**'
+    - 'test_apps/**/*'
     - 'vendor/**/*'
+    - 'vendor/budndle/ruby/**/*'
 
 Metrics/MethodLength:
   Max: 25
