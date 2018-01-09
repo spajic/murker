@@ -1,11 +1,13 @@
 sudo: false
 language: ruby
+env:
+  - RAILS_ENV=test
 rvm:
   - 2.3.2
 before_install:
   - gem install bundler -v 1.16.1
 script:
-  - bundle exec rubocop ../../ -c ../../.rubocop.yml
-  - RAILS_ENV=test bundle exec rake spec
-  - bundle exec appraisal install && RAILS_ENV=test bundle exec appraisal rails-5 cucumber
+  - bundle exec rubocop ../../spajic/murker
+  - bundle exec rake spec
+  - bundle exec appraisal install && bundle exec appraisal rails-5 cucumber
 cache: bundler
