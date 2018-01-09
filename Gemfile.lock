@@ -100,7 +100,7 @@ DEPENDENCIES
   pry-byebug
   rake (~> 10.0)
   rspec (~> 3.0)
-  rubocop
+  rubocop (~> 0.52.1)
 
 BUNDLED WITH
    1.16.1
