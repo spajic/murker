@@ -9,7 +9,7 @@ gemfile:
 before_install:
   - gem install bundler -v 1.16.1
 script:
-  # - bundle exec rubocop
+  - bundle exec rubocop
   - bundle exec rake spec
   - bundle exec appraisal rails-5 cucumber
 cache: bundler
