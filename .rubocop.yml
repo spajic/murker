@@ -9,7 +9,7 @@ AllCops:
     - 'Gemfile'
     - 'test_apps/**/*'
     - 'vendor/bundle/**/*'
-    - 'vendor/bundle/ruby/2.3.0/gems/**/*'
+    - 'vendor/bundle/ruby/2.3.0/**/*'
 
 Metrics/MethodLength:
   Max: 25
